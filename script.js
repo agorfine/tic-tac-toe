@@ -38,12 +38,13 @@ function changePlayer () {
 	let display_player2 = display.textContent = "Player 1's Turn"
 	if (player == 0) {
 		player = 1
-		display = display_player1
+		display.textContent = display_player1
+		// https://www.w3schools.com/jsref/prop_node_textcontent.asp
 		// console.log(player)
 		console.log(display_player1)
 	} else {
 		player = 0
-		display = display_player2
+		display.textContent = display_player2
 		console.log(display_player2)
 		// console.log(player)
 	}
