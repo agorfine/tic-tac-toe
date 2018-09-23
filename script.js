@@ -9,12 +9,12 @@ function marker (event) {
 	console.log(event.target.id)
 	let button = event.target.id
 	if (button) {
-		document.getElementById(event.target.id).innerHTML = "<p>" + mark[players] + "</p>";
+		document.getElementById(event.target.id).innerHTML = "<p>" + mark[player] + "</p>";
 		changePlayer();
 	}
 }
 
-document.addEventListener('click', player)
+document.addEventListener('click', marker)
 
 let mark = ["X", "O"]
 let player = 0
@@ -22,67 +22,35 @@ let player = 0
 // https://www.w3schools.com/js/js_htmldom_html.asp
 // https://www.youtube.com/watch?v=XwPVlXb5thI
 // to alternate players must go back and forth
-// IF players 
+/* 
+change between players
+	IF player is 0 will mark box with X and change player to 0
+		ELSE change player to 1
+
+Change display of whos turn it is
+	IF player 0 display Player 1's turn
+	IF player 1 display player 2's turn
+*/
 
 function changePlayer () {
+	let display = document.querySelector(".box2")
+	let display_player1 = display.textContent = "Player 2's Turn"
+	let display_player2 = display.textContent = "Player 1's Turn"
 	if (player == 0) {
 		player = 1
-		console.log(player)
+		display = display_player1
+		// console.log(player)
+		console.log(display_player1)
 	} else {
-		players = 0
-		console.log(player)
+		player = 0
+		display = display_player2
+		console.log(display_player2)
+		// console.log(player)
 	}
-	}	
+}	
 
 
 /*
-FUNCTION playGame	
-	player 1 turn
-		IF player 1 selectButton button 1
-			write X in center of box
-		IF player 1 selectButton button 2
-			write X in center of box
-		IF player 1 selectButton button 3
-			write X in center of box	
-		IF player 1 selectButton button 4
-			write X in center of box
-		IF player 1 selectButton button 5
-			write X in center of box
-		IF player 1 selectButton button 6
-			write X in center of box
-		IF player 1 selectButton button 7
-			write X in center of box
-		IF player 1 selectButton button 8
-			write X in center of box	
-		IF player 1 selectButton button 9
-			write X in center of box	
-	player 2 turn
-		IF player 2 selectButton button 1
-			write X in center of box
-		IF player 2 selectButton button 2
-			write X in center of box
-		IF player 2 selectButton button 3
-			write X in center of box	
-		IF player 2 selectButton button 4
-			write X in center of box
-		IF player 2 selectButton button 5
-			write X in center of box
-		IF player 2 selectButton button 6
-			write X in center of box
-		IF player 2 selectButton button 7
-			write X in center of box
-		IF player 2 selectButton button 8
-			write X in center of box	
-		IF player 2 selectButton button 9
-			write X in center of box
-*/
-/*
-FUNCTION playGame 
-	
-*/
-
-/*
-
 LOOP through game until player1 gets threeInRow
 or until player2 gets threeInRow
 */
@@ -111,4 +79,22 @@ threeInRow
 	EQUAL to player2 clicked button7 button5 button 3
 */
 
+// let button1 = document.getElementById('button1')
+// let button2 = document.getElementById('button2')
+// let button3 = document.getElementById('button3')
+// let button4 = document.getElementById('button4')
+// let button5 = document.getElementById('button5')
+// let button6 = document.getElementById('button6')
+// let button7 = document.getElementById('button7')
+// let button8 = document.getElementById('button8')
+// let button9 = document.getElementById('button9')
+
+
+// let win = [
+// 	[button1, button2, button3],
+// ]
+
+// function checkWinner () {
+// 	if ()
+// }
 
