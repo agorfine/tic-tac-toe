@@ -5,19 +5,37 @@ FUNCTION selectButton
 	ADD click event listener to button
 */
 
-function playGame (event) {
+function playGame (event, value) {
 	console.log(event.target.id)
+	// https://www.w3schools.com/jsref/event_target.asp
 	let button = event.target.id
 	if (button) {
 		document.getElementById(event.target.id).innerHTML = "<p>" + mark[player] + "</p>";
 		changePlayer();
+		// backgroundColor();
+		pushValue ()
+		checkWinner()
 	}
+
 }
+
+// function backgroundColor(){
+// 	let info = document.querySelector('p')
+	
+// 	if (info.innerHTML.includes('X')) {
+// 		info.style.backgroundColor = 'pink'
+// 	} else {
+// 		info.style.backgroundColor = 'white'
+// 	}
+// }
+
+
 
 document.addEventListener('click', playGame)
 
 let mark = ["X", "O"]
 let player = 0
+
 // https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 // https://www.w3schools.com/js/js_htmldom_html.asp
 // https://www.youtube.com/watch?v=XwPVlXb5thI
@@ -57,26 +75,14 @@ use clear button the clear the board
 let body = document.querySelector('body')
 let clearButton = document. querySelector('.box1')
 
-
-// let button = document.querySelectorAll('.button')
-// let c = button.querySelector('.button')
-
 function clear () {
 	let display = document.querySelector(".box2")
 		display.textContent = "Player 1's Turn"
-
 	let button = document.querySelectorAll('.button')
-	let body = document.querySelector('body')
-
-	for (i = 0; i = button.length; i++) {
-		let tic =document.querySelector('p')
-		tic.parentNode.removeChild(tic[i])
-	}
-
-
-	// tic.button.removeChild(tic);
-
-	console.log(body)
+	for (i = 0; i < button.length; i++) {
+      	let tic =document.querySelectorAll('.button')
+   		 tic[i].innerHTML = ''
+ 	}
 }
 
 clearButton.addEventListener('click', clear)
@@ -111,21 +117,54 @@ threeInRow
 	EQUAL to player2 clicked button7 button5 button 3
 */
 
-let button1 = document.getElementById('button1')
-let button2 = document.getElementById('button2')
-let button3 = document.getElementById('button3')
-let button4 = document.getElementById('button4')
-let button5 = document.getElementById('button5')
-let button6 = document.getElementById('button6')
-let button7 = document.getElementById('button7')
-let button8 = document.getElementById('button8')
-let button9 = document.getElementById('button9')
+// let button1 = document.getElementById('button1')
+// let button2 = document.getElementById('button2')
+// let button3 = document.getElementById('button3')
+// let button4 = document.getElementById('button4')
+// let button5 = document.getElementById('button5')
+// let button6 = document.getElementById('button6')
+// let button7 = document.getElementById('button7')
+// let button8 = document.getElementById('button8')
+// let button9 = document.getElementById('button9')
 
 
-function checkWinner () {
-	if (button1 === mark[0] && button2 === mark[0] && button3 === mark[0]) {
-		alert("Player 1 Wins!")
+// function checkWinner () {
+// 	if (button1.childNode.innerHTML.includes === mark[0] && button2.childNode.innerHTML.includes === mark[0] && button3.childNode.innerHTML.includes === mark[0]) {
+// 		alert("Player 1 Wins!")
+// 	}
+// }
+
+let values = [0,1,2,3,4,5,6,7,8]
+let board = []
+
+function ID(values) {
+	this.values = values;
+}
+
+function pushValue () {
+	for (let i = 0; i < values.length; i++) {
+		board.push(new ID(values[i]))
+		console.log(board)
 	}
+}	
+
+let wins = [
+	[0,1,2],
+	[3,4,5],
+	[6,7,8],
+	[0,3,6],
+	[1,4,7],
+	[2,5,8],
+	[0,4,8],
+	[2,4,6]
+]
+
+function checkWinner(){
+  for(var i=0; i<wins.length; i++){
+  	if (board[0]=== 'X' && board[1]=== 'X' && board[2]=== 'X'){
+  		alert("player 1 wins!")
+  	}
+  }	
 }
 
 
