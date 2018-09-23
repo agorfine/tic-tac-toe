@@ -5,7 +5,7 @@ FUNCTION selectButton
 	ADD click event listener to button
 */
 
-function playGame (event, value) {
+function playGame (event) {
 	console.log(event.target.id)
 	// https://www.w3schools.com/jsref/event_target.asp
 	let button = event.target.id
@@ -13,11 +13,9 @@ function playGame (event, value) {
 		document.getElementById(event.target.id).innerHTML = "<p>" + mark[player] + "</p>";
 		changePlayer();
 		// backgroundColor();
-		pushValue ()
-		checkWinner()
-	}
-
-}
+		// pushValue()	
+	}	
+}	
 
 // function backgroundColor(){
 // 	let info = document.querySelector('p')
@@ -50,23 +48,31 @@ Change display of whos turn it is
 	IF player 1 display player 2's turn
 */
 
-function changePlayer () {
+function changePlayer (event) {
 	let display = document.querySelector(".box2")
 	let display_player1 = display.textContent = "Player 2's Turn"
 	let display_player2 = display.textContent = "Player 1's Turn"
+	let value = [0,1,2,3,4,5,6,7,8]
 
-	if (player == 0) {
-		player = 1
-		display.textContent = display_player1;
-		// https://www.w3schools.com/jsref/prop_node_textcontent.asp
-		// console.log(player)
-		// console.log(display_player1)
-	} else {
-		player = 0
-		display.textContent = display_player2;
-		// console.log(display_player2)
-		// console.log(player)
-	}
+	for (let i = 0; i < value.length; i++) {
+		if (player == 0) {
+			player = 1
+			display.textContent = display_player1;
+			let score = pushValue()
+			player1Score.push(score)
+			console.log(player1Score)
+			// https://www.w3schools.com/jsref/prop_node_textcontent.asp
+			// console.log(player)
+			// console.log(display_player1)
+		} else {
+			player = 0
+			display.textContent = display_player2;
+			player2Score.push()
+			console.log(player2Score)
+			// console.log(display_player2)
+			// console.log(player)
+		}
+	}	
 }	
 
 /*
@@ -82,6 +88,9 @@ function clear () {
 	for (i = 0; i < button.length; i++) {
       	let tic =document.querySelectorAll('.button')
    		 tic[i].innerHTML = ''
+   		 player1Score = []
+		 player2Score = []
+		 player = 0
  	}
 }
 
@@ -117,15 +126,15 @@ threeInRow
 	EQUAL to player2 clicked button7 button5 button 3
 */
 
-// let button1 = document.getElementById('button1')
-// let button2 = document.getElementById('button2')
-// let button3 = document.getElementById('button3')
-// let button4 = document.getElementById('button4')
-// let button5 = document.getElementById('button5')
-// let button6 = document.getElementById('button6')
-// let button7 = document.getElementById('button7')
-// let button8 = document.getElementById('button8')
-// let button9 = document.getElementById('button9')
+let button1 = document.getElementById('button1')
+let button2 = document.getElementById('button2')
+let button3 = document.getElementById('button3')
+let button4 = document.getElementById('button4')
+let button5 = document.getElementById('button5')
+let button6 = document.getElementById('button6')
+let button7 = document.getElementById('button7')
+let button8 = document.getElementById('button8')
+let button9 = document.getElementById('button9')
 
 
 // function checkWinner () {
@@ -134,18 +143,20 @@ threeInRow
 // 	}
 // }
 
-let values = [0,1,2,3,4,5,6,7,8]
-let board = []
+let player1Score = []
+let player2Score = []
+let value = [0,1,2,3,4,5,6,7,8]
 
-function ID(values) {
-	this.values = values;
-}
 
-function pushValue () {
-	for (let i = 0; i < values.length; i++) {
-		board.push(new ID(values[i]))
-		console.log(board)
+// function ID(values) {
+// 	this.values = values;
+// }
+
+function pushValue (score) {
+	for (let i = 0; i < value.length; i++) {
+		score = value[i]
 	}
+	return score;
 }	
 
 let wins = [
@@ -160,11 +171,15 @@ let wins = [
 ]
 
 function checkWinner(){
-  for(var i=0; i<wins.length; i++){
-  	if (board[0]=== 'X' && board[1]=== 'X' && board[2]=== 'X'){
-  		alert("player 1 wins!")
+  	for(var i=0; i<wins.length; i++){
+  		if (player1Score === wins[i]) {
+  			alert("player 1 wins")
+  			
+  		} else {
+  			alert("player 2 wins")
+  			player2Score = []
+  		}
   	}
-  }	
 }
 
 
