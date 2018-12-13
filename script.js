@@ -52,28 +52,29 @@ function changePlayer (event) {
 	let display = document.querySelector(".box2")
 	let display_player1 = display.textContent = "Player 2's Turn"
 	let display_player2 = display.textContent = "Player 1's Turn"
-	let value = [0,1,2,3,4,5,6,7,8]
+	// let value = [0,1,2,3,4,5,6,7,8]
 
-	for (let i = 0; i < value.length; i++) {
+	// for (let i = 0; i < value.length; i++) {
 		if (player == 0) {
 			player = 1
 			display.textContent = display_player1;
-			let score = pushValue()
-			player1Score.push(score)
-			console.log(player1Score)
+			// let score = pushValue()
+			// player1Score.push(score)
+			// console.log(player1Score)
 			// https://www.w3schools.com/jsref/prop_node_textcontent.asp
 			// console.log(player)
 			// console.log(display_player1)
 		} else {
 			player = 0
 			display.textContent = display_player2;
-			player2Score.push()
-			console.log(player2Score)
+			// let score = pushValue()
+			// player2Score.push(score)
+			// console.log(player2Score)
 			// console.log(display_player2)
 			// console.log(player)
 		}
 	}	
-}	
+// }	
 
 /*
 use clear button the clear the board
@@ -126,15 +127,15 @@ threeInRow
 	EQUAL to player2 clicked button7 button5 button 3
 */
 
-let button1 = document.getElementById('button1')
-let button2 = document.getElementById('button2')
-let button3 = document.getElementById('button3')
-let button4 = document.getElementById('button4')
-let button5 = document.getElementById('button5')
-let button6 = document.getElementById('button6')
-let button7 = document.getElementById('button7')
-let button8 = document.getElementById('button8')
-let button9 = document.getElementById('button9')
+// let button1 = document.getElementById('button1')
+// let button2 = document.getElementById('button2')
+// let button3 = document.getElementById('button3')
+// let button4 = document.getElementById('button4')
+// let button5 = document.getElementById('button5')
+// let button6 = document.getElementById('button6')
+// let button7 = document.getElementById('button7')
+// let button8 = document.getElementById('button8')
+// let button9 = document.getElementById('button9')
 
 
 // function checkWinner () {
@@ -143,44 +144,44 @@ let button9 = document.getElementById('button9')
 // 	}
 // }
 
-let player1Score = []
-let player2Score = []
-let value = [0,1,2,3,4,5,6,7,8]
+// let player1Score = []
+// let player2Score = []
+// let value = [0,1,2,3,4,5,6,7,8]
 
 
-// function ID(values) {
-// 	this.values = values;
-// }
+// // function ID(values) {
+// // 	this.values = values;
+// // }
 
-function pushValue (score) {
-	for (let i = 0; i < value.length; i++) {
-		score = value[i]
-	}
-	return score;
-}	
+// function pushValue (score) {
+// 	for (let i = 0; i < value.length; i++) {
+// 		score = value[i]
+// 	}
+// 	return score;
+// }	
 
-let wins = [
-	[0,1,2],
-	[3,4,5],
-	[6,7,8],
-	[0,3,6],
-	[1,4,7],
-	[2,5,8],
-	[0,4,8],
-	[2,4,6]
-]
+// let wins = [
+// 	[0,1,2],
+// 	[3,4,5],
+// 	[6,7,8],
+// 	[0,3,6],
+// 	[1,4,7],
+// 	[2,5,8],
+// 	[0,4,8],
+// 	[2,4,6]
+// ]
 
-function checkWinner(){
-  	for(var i=0; i<wins.length; i++){
-  		if (player1Score === wins[i]) {
-  			alert("player 1 wins")
+// function checkWinner(){
+//   	for(var i=0; i<wins.length; i++){
+//   		if (player1Score === wins[i]) {
+//   			alert("player 1 wins")
   			
-  		} else {
-  			alert("player 2 wins")
-  			player2Score = []
-  		}
-  	}
-}
+//   		} else {
+//   			alert("player 2 wins")
+//   			player2Score = []
+//   		}
+//   	}
+// }
 
 
 
