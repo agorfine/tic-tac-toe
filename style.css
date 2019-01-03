@@ -106,7 +106,7 @@ p {
 .letter {
 	color: white;
 }
-/*
+
 @media screen and (min-width: 320px) {
 	.button {
 		width: 90px;
@@ -277,4 +277,4 @@ p {
 		color: white;
 	}
 
-}*/
+}
