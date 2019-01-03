@@ -103,19 +103,11 @@ p {
 	color: rgba(1, 32, 39);
 }
 
-.playerX {
-	background-color: white;
-}
-
-.playerO {
-	background-color: pink;
-}
-
 .letter {
 	color: white;
 }
 
-@media screen and (min-width: 320px) {
+/*@media screen and (min-width: 320px) {
 	* {
 		font-family: 'Arimo', sans-serif;
 	}
@@ -158,7 +150,6 @@ p {
 	}
 
 	.button {
-		/*border: 2px solid;*/
 		width: 200px;
 		height: 175px;
 	}
@@ -233,7 +224,6 @@ p {
 		color: white;
 	}
 	.button {
-		/*border: 2px solid;*/
 		width: 90px;
 		height: 95px;
 	}
@@ -256,7 +246,6 @@ p {
 
 @media screen and (min-width: 375px) {
 	.button {
-		/*border: 2px solid;*/
 		width: 103px;
 		height: 109px;
 	}
@@ -282,7 +271,6 @@ p {
 
 @media screen and (min-width: 414px) {
 	.button {
-		/*border: 2px solid;*/
 		width: 114px;
 		height: 114px;
 	}
@@ -325,7 +313,6 @@ p {
 	}
 
 	.button {
-		/*border: 2px solid;*/
 		width: 200px;
 		height: 175px;
 		transition: background-color .5s;
