@@ -5,8 +5,8 @@
 body {
 	text-align: center;
 	font-family: 'Arimo', sans-serif;
-	background-color: rgba(176, 141, 200, .5);
-	color: rgba(26, 2, 42);
+	background-color: rgba(20, 137, 193);
+	color: white;
 }
 
 .box1 {
@@ -15,10 +15,17 @@ body {
 	font-family: 'Arimo', sans-serif;
 	font-size: 30px;
 	margin: 20px;
-	color: white;
-	background-color: rgba(58, 19, 85);
+	color: rgba(20, 137, 193);
+	font-weight: bold;
+	background-color: rgba(255, 255, 255, .8);
 	border-radius: 15px;
+	transition: scale 1s;
 }
+
+.box1:hover {
+	transform: scale(1.05);
+}
+
 
 .box2 {
 	font-size: 35px;
@@ -40,52 +47,52 @@ body {
 
 #button1 {
 	border-top: none;
-	border-bottom: 4px solid rgba(58, 19, 85);
+	border-bottom: 4px solid white;
 	border-left: none;
-	border-right: 4px solid rgba(58, 19, 85);
+	border-right: 4px solid white;
 }
 
 #button2 {
 	border-top: none;
-	border-bottom: 4px solid rgba(58, 19, 85);
+	border-bottom: 4px solid white;
 	border-left: none;
-	border-right: 4px solid rgba(58, 19, 85);
+	border-right: 4px solid white;
 }
 
 #button3 {
 	border-left: none;
-	border-right: 4px solid rgba(58, 19, 85);
+	border-right: 4px solid white;
 	border-bottom: none;
 	border-top: none;
 }
 
 #button4 {
 	border-top: none;
-	border-bottom: 4px solid rgba(58, 19, 85);
+	border-bottom: 4px solid white;
 	border-left: none;
-	border-right: 4px solid rgba(58, 19, 85);
+	border-right: 4px solid white;
 }
 
 #button5 {
 	border-top: none;
-	border-bottom: 4px solid rgba(58, 19, 85);
+	border-bottom: 4px solid white;
 	border-left: none;
-	border-right: 4px solid rgba(58, 19, 85);
+	border-right: 4px solid white;
 }
 
 #button6 {
 	border-left: none;
-	border-right: 4px solid rgba(58, 19, 85);
+	border-right: 4px solid white;
 	border-bottom: none;
 	border-top: none;
 }
 
 #button7 {
-	border-bottom: 4px solid rgba(58, 19, 85);
+	border-bottom: 4px solid white;
 }
 
 #button8 {
-	border-bottom: 4px solid rgba(58, 19, 85);
+	border-bottom: 4px solid white;
 }
 
 p {
@@ -102,4 +109,184 @@ p {
 
 .playerO {
 	background-color: pink;
+}
+
+.letter {
+	color: white;
+}
+
+@media screen and (min-width: 320px) {
+	.button {
+		/*border: 2px solid;*/
+		width: 90px;
+		height: 95px;
+	}
+
+	.box2 {
+	    font-size: 27px;
+	}
+
+	.box1 {
+	    width: 83%;
+	    height: 70px;
+	    font-size: 23px;
+	}
+	p {
+		font-size: 50px;
+		padding-top: 19px;
+	}
+
+}
+
+@media screen and (min-width: 375px) {
+	.button {
+		/*border: 2px solid;*/
+		width: 103px;
+		height: 109px;
+	}
+
+	.box2 {
+	    font-size: 24px;
+	    margin-top: 33px;
+	    margin-bottom: 65px;
+	}
+
+	.box1 {
+	    width: 85%;
+    	height: 75px;
+    	font-size: 24px;
+    	    margin: 50px 20px 20px 20px;
+	}
+	p {
+		font-size: 53px;
+    	padding-top: 25px;
+	}
+
+}
+
+@media screen and (min-width: 414px) {
+	.button {
+		/*border: 2px solid;*/
+		width: 114px;
+		height: 114px;
+	}
+
+	.box1 {
+	    width: 90%;
+	}
+
+}
+
+@media screen and (min-width: 415px) {
+	.box1 {
+		width: 70%;
+		height: 100px;
+		font-family: 'Arimo', sans-serif;
+		font-size: 30px;
+		margin: 20px;
+		color: rgba(20, 137, 193);
+		font-weight: bold;
+		background-color: rgba(255, 255, 255, .8);
+		border-radius: 15px;
+		transition: scale 1s;
+	}
+
+	.box1:hover {
+		transform: scale(1.05);
+	}
+
+
+	.box2 {
+		font-size: 35px;
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+
+	.box3 {
+		display: flex;
+		justify-content: center;
+		margin: 30px;
+	}
+
+	.button {
+		/*border: 2px solid;*/
+		width: 200px;
+		height: 175px;
+		transition: background-color .5s;
+	}
+
+	.button:hover {
+		background-color: rgba(255, 255, 255, .4);
+	}
+
+	#button1 {
+		border-top: none;
+		border-bottom: 4px solid white;
+		border-left: none;
+		border-right: 4px solid white;
+	}
+
+	#button2 {
+		border-top: none;
+		border-bottom: 4px solid white;
+		border-left: none;
+		border-right: 4px solid white;
+	}
+
+	#button3 {
+		border-left: none;
+		border-right: 4px solid white;
+		border-bottom: none;
+		border-top: none;
+	}
+
+	#button4 {
+		border-top: none;
+		border-bottom: 4px solid white;
+		border-left: none;
+		border-right: 4px solid white;
+	}
+
+	#button5 {
+		border-top: none;
+		border-bottom: 4px solid white;
+		border-left: none;
+		border-right: 4px solid white;
+	}
+
+	#button6 {
+		border-left: none;
+		border-right: 4px solid white;
+		border-bottom: none;
+		border-top: none;
+	}
+
+	#button7 {
+		border-bottom: 4px solid white;
+	}
+
+	#button8 {
+		border-bottom: 4px solid white;
+	}
+
+	p {
+		font-size: 70px;
+		margin: 0;
+		padding-top: 40px;
+		height: 139px;
+		color: rgba(1, 32, 39);
+	}
+
+	.playerX {
+		background-color: white;
+	}
+
+	.playerO {
+		background-color: pink;
+	}
+
+	.letter {
+		color: white;
+	}
+
 }

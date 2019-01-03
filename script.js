@@ -1,38 +1,63 @@
-
-/*
-FUNCTION selectButton
-	let button EQUAL get element button
-	ADD click event listener to button
-*/
+let mark = ["X", "O"]
+let player = 0
+let player1 = []
+let player2 = []
 
 function playGame (event) {
 	console.log(event.target.id)
 	// https://www.w3schools.com/jsref/event_target.asp
 	let button = event.target.id
 	if (button) {
-		document.getElementById(event.target.id).innerHTML = "<p>" + mark[player] + "</p>";
+		document.getElementById(event.target.id).innerHTML = "<p class= 'letter'>" + mark[player] + "</p>";
 		changePlayer();
-		// backgroundColor();
-		// pushValue()	
 	}	
+
+	if (player == 0){
+		if (event.target.id === button1) {
+			player1.push(1)
+		} else if (event.target.id === button2){
+			player1.push(2)
+		} else if (event.target.id === button3){
+			player1.push(3)
+		} else if (event.target.id === button4){
+			player1.push(4)
+		} else if (event.target.id === button5){
+			player1.push(5)
+		} else if (event.target.id === button6){
+			player1.push(6)
+		} else if (event.target.id === button7){
+			player1.push(7)
+		} else if (event.target.id === button8){
+			player1.push(8)
+		} else{
+			player1.push(9)
+		}
+		console.log(player1)
+	} else {
+		if (button === button1) {
+			player2.push(1)
+		} else if (button === button2){
+			player2.push(2)
+		} else if (button === button3){
+			player2.push(3)
+		} else if (button === button4){
+			player2.push(4)
+		} else if (button === button5){
+			player2.push(5)
+		} else if (button === button6){
+			player2.push(6)
+		} else if (button === button7){
+			player2.push(7)
+		} else if (button === button8){
+			player2.push(8)
+		} else{
+			player2.push(9)
+		}
+		console.log(player2)
+	}
 }	
 
-// function backgroundColor(){
-// 	let info = document.querySelector('p')
-	
-// 	if (info.innerHTML.includes('X')) {
-// 		info.style.backgroundColor = 'pink'
-// 	} else {
-// 		info.style.backgroundColor = 'white'
-// 	}
-// }
-
-
-
 document.addEventListener('click', playGame)
-
-let mark = ["X", "O"]
-let player = 0
 
 // https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 // https://www.w3schools.com/js/js_htmldom_html.asp
@@ -52,29 +77,18 @@ function changePlayer (event) {
 	let display = document.querySelector(".box2")
 	let display_player1 = display.textContent = "Player 2's Turn"
 	let display_player2 = display.textContent = "Player 1's Turn"
-	// let value = [0,1,2,3,4,5,6,7,8]
 
-	// for (let i = 0; i < value.length; i++) {
-		if (player == 0) {
-			player = 1
-			display.textContent = display_player1;
-			// let score = pushValue()
-			// player1Score.push(score)
-			// console.log(player1Score)
-			// https://www.w3schools.com/jsref/prop_node_textcontent.asp
-			// console.log(player)
-			// console.log(display_player1)
-		} else {
-			player = 0
-			display.textContent = display_player2;
-			// let score = pushValue()
-			// player2Score.push(score)
-			// console.log(player2Score)
-			// console.log(display_player2)
-			// console.log(player)
-		}
-	}	
-// }	
+	if (player == 0) {
+		player = 1
+		display.textContent = display_player1;
+	
+	} else {
+		player = 0
+		display.textContent = display_player2;
+
+	}
+}	
+	
 
 /*
 use clear button the clear the board
@@ -96,92 +110,6 @@ function clear () {
 }
 
 clearButton.addEventListener('click', clear)
-
-
-/*
-LOOP through game until player1 gets threeInRow
-or until player2 gets threeInRow
-*/
-/*
-threeInRow
-	EQUAL to player1 clicked button1 button2 button3
-	EQUAL to player1 clicked button4 button5 button6
-	EQUAL to player1 clicked button7 button8 button9
-
-	EQUAL to player1 clicked button1 button4 button7
-	EQUAL to player1 clicked button2 button5 button8
-	EQUAL to player1 clicked button3 button6 button9
-
-	EQUAL to player1 clicked button1 button5 button 9
-	EQUAL to player1 clicked button7 button5 button 3
-
-	EQUAL to player2 clicked button1 button2 button3
-	EQUAL to player2 clicked button4 button5 button6
-	EQUAL to player2 clicked button7 button8 button9
-
-	EQUAL to player2 clicked button1 button4 button7
-	EQUAL to player2 clicked button2 button5 button8
-	EQUAL to player2 clicked button3 button6 button9
-
-	EQUAL to player2 clicked button1 button5 button 9
-	EQUAL to player2 clicked button7 button5 button 3
-*/
-
-// let button1 = document.getElementById('button1')
-// let button2 = document.getElementById('button2')
-// let button3 = document.getElementById('button3')
-// let button4 = document.getElementById('button4')
-// let button5 = document.getElementById('button5')
-// let button6 = document.getElementById('button6')
-// let button7 = document.getElementById('button7')
-// let button8 = document.getElementById('button8')
-// let button9 = document.getElementById('button9')
-
-
-// function checkWinner () {
-// 	if (button1.childNode.innerHTML.includes === mark[0] && button2.childNode.innerHTML.includes === mark[0] && button3.childNode.innerHTML.includes === mark[0]) {
-// 		alert("Player 1 Wins!")
-// 	}
-// }
-
-// let player1Score = []
-// let player2Score = []
-// let value = [0,1,2,3,4,5,6,7,8]
-
-
-// // function ID(values) {
-// // 	this.values = values;
-// // }
-
-// function pushValue (score) {
-// 	for (let i = 0; i < value.length; i++) {
-// 		score = value[i]
-// 	}
-// 	return score;
-// }	
-
-// let wins = [
-// 	[0,1,2],
-// 	[3,4,5],
-// 	[6,7,8],
-// 	[0,3,6],
-// 	[1,4,7],
-// 	[2,5,8],
-// 	[0,4,8],
-// 	[2,4,6]
-// ]
-
-// function checkWinner(){
-//   	for(var i=0; i<wins.length; i++){
-//   		if (player1Score === wins[i]) {
-//   			alert("player 1 wins")
-  			
-//   		} else {
-//   			alert("player 2 wins")
-//   			player2Score = []
-//   		}
-//   	}
-// }
 
 
 
